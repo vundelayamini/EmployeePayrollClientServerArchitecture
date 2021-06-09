@@ -15,7 +15,7 @@
             margin-top: 50px;
         }
     </style>
-    <script src="../js/http_services.js"></script>
+    <script src="../services/http_services.js"></script>
     </head>
     <body>
         <h1>The Test Services Result</h1>
@@ -24,7 +24,7 @@
         <div id="post_services"></div>
         <script>
             const getElem = document.querySelector("#get_services");
-            const getURL = "http://127.0.0.1:3000/employeePayrollDB/1";
+            const getURL = "http://127.0.0.1:3000/EmployeePayrollDB/1";
             makeServiceCall("GET", getURL, true)
                 .then(responseText => {
                     getElem.textContent = "Get User Data: "+responseText;
@@ -34,7 +34,7 @@
                 });
             
             const deleteElem = document.querySelector("#delete_services");
-            const deleteURL = "http://127.0.0.1:3000/employeePayrollDB/3";
+            const deleteURL = "http://127.0.0.1:3000/EmployeePayrollDB/3";
             makeServiceCall("DELETE", deleteURL, false)
                 .then(responseText => {
                     deleteElem.textContent = "Delete Data: "+responseText;
@@ -58,7 +58,7 @@
             };
 
             const postElem = document.querySelector("#post_services");
-            const postURL = "http://127.0.0.1:3000/employeePayrollDB";
+            const postURL = "http://127.0.0.1:3000/EmployeePayrollDB";
             makeServiceCall("POST", postURL, true, employeePayrollData)
                 .then(responseText => {
                       postElem.textContent = "New user Data: "+responseText;
